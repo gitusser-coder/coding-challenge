@@ -29,3 +29,11 @@ class Mintano extends StatelessWidget {
     ); //Scafold, Layout 
   }
 }
+
+// Das Overlay anzeigen lassen 
+Future<img.Image?> loadOverlayImage() async {
+  final ByteData data = rootBundle.load('assets/overlay.png');
+  final Uint8List bytes = data.buffer.asUint8List();
+  final img.Image? overlayImage = img.decodeImage(bytes);
+  return overlayImage;
+}
