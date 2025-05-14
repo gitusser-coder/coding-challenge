@@ -37,3 +37,17 @@ Future<img.Image?> loadOverlayImage() async {
   final img.Image? overlayImage = img.decodeImage(bytes);
   return overlayImage;
 }
+
+
+// Funktion die ein Overlay-Bild auf das Hauptbild zeichnet
+img.Image drawOverlay(img.Image mainImage, img.Image overlayImage) {
+  //das overlay.png kommt auf das hauptbild
+  // dstx und dsty sind die Positionen, wo das Overlay hinkommt
+  // blend: true sorgt dafür, dass das Overlay transparent ist 
+  img.copyInto(
+    mainImage,           //  das Hauptbild
+    overlayImage,        // Das Overlay-Bild
+    dstX: 50,            // X-Position wo das Overlay startet
+    dstY: 50,            // Y-Position wo das Overlay startet
+    blend: true,         // wichtig damit Transparenz im PNG berücksichtigt wird
+  );
