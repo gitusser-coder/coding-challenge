@@ -64,3 +64,8 @@ img.Image drawOverlay(img.Image mainImage, img.Image overlayImage) {
     dstY: 50,            // Y-Position wo das Overlay startet
     blend: true,         // wichtig damit Transparenz im PNG berücksichtigt wird
   );
+
+  // Gibt das fertige Bild zurück
+  return mainImage;
+}
+  
