@@ -1,0 +1,10 @@
+
+
+dependencies:
+  flutter:
+    sdk: flutter
+  image: ^4.1.3
+
+assets:
+    -  assets/gojo_zeigt_bg.png
+    -  assets/overlay.png
