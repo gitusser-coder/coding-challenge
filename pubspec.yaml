@@ -8,3 +8,4 @@ dependencies:
 assets:
     -  assets/gojo_zeigt_bg.png
     -  assets/overlay.png
+    -  assets/wasserzeichen.png
