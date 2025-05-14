@@ -18,16 +18,29 @@ class MyApp extends StatelessWidget {
 class Mintano extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold( 
-      appBar: AppBar(title: Text('Bildbearbeitung')), 
-      body: Center( 
-        child: Image.asset(
-          'assets/gojo_zeigt_bg.png',
-          width: 300,
-        ), //Image.asset, Bild anzeigen 
-      ), // Center, Inhalt 
-    ); //Scafold, Layout 
-  }
+  return Scaffold(
+  appBar: AppBar(title: Text('Bildbearbeitung')),
+  body: Center(
+  child: Column(
+   mainAxisAlignment: MainAxisAlignment.center,
+     // Button um das Bild zu bearbeiten      
+  children: [
+    ElevatedButton(
+    onPressed: () {
+      combineAndShow(context);
+    },
+    child: Text('Bild bearbeiten'), 
+    ),
+    SizedBox(height: 20),
+      Text(
+         'Klicke auf den Button, um das Bild mit Overlay und Wasserzeichen zu generieren.',
+              textAlign: TextAlign.center,
+            ), //Text
+          ],
+        ), Inhalt, Body 
+      ), Center
+    ); Scaffold, Layout 
+}
 }
 
 // Das Overlay anzeigen lassen 
