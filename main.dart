@@ -122,3 +122,23 @@ img.Image addWatermark(img.Image mainImage, img.Image watermark) {
   // Bildrückgabe 
   return mainImage;
 }
+
+
+// Wir laden die wasserzeichen-Bilddatei aus dem assets-Ordner
+final ByteData watermarkData = await rootBundle.load('assets/wasserzeichen.png');
+
+// Wir wandeln die Bilddaten in ein Byteformat um, das wir weiterverarbeiten können
+final Uint8List watermarkBytes = watermarkData.buffer.asUint8List();
+
+// Bytes werden decodiert um weiter damit zu arbeiten 
+final img.Image? watermarkImage = img.decodeImage(watermarkBytes);
+
+// Hier wird geprüft ob wasserzeichen und overlay erfolgreich geladen wurden
+if (overlayImage != null && watermarkImage != null) {
+  
+  // Overlay wird auf das Hauptbild gezeichnet
+  img.Image finalImage = drawOverlay(mainImage, overlayImage);
+
+  // Dann fügen wir das Wasserzeichen unten rechts auf das Bild
+  finalImage = addWatermark(finalImage, watermarkImage);
+}
