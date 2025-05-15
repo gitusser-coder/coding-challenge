@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:image/image.dart' as img;
+import 'dart:typed_data';
+import 'package:flutter/services.dart';
+
 
 void main() {
   runApp(MyApp());
@@ -116,7 +120,7 @@ img.Image addWatermark(img.Image mainImage, img.Image watermark) {
     watermark,        // Wasserzeichen
     dstX: x,          // X-Koordinate (rechts)
     dstY: y,          // Y-Koordinate (unten)
-    blend: true,      // blend = true sorgt für weiche
+    blend: true,      // blend = true sorgt für transparenz
   );
 
   // Bildrückgabe 
