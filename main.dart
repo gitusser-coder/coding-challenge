@@ -119,5 +119,6 @@ img.Image addWatermark(img.Image mainImage, img.Image watermark) {
     blend: true,      // blend = true sorgt für weiche
   );
 
+  // Bildrückgabe 
   return mainImage;
 }
